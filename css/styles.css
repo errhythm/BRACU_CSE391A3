@@ -80,7 +80,7 @@ nav{
 .navbar ul{
     display:flex;
     justify-content:space-between;
-    width:250px
+    width:400px
 }
 .navbar ul li{
     list-style:none

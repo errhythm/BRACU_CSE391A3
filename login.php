@@ -23,9 +23,9 @@
         </div>
         <div class="navbar">
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="booking.php">Book</a></li>
-                <li><a href="login.php">Login</a></li>
+                <?php
+                    include 'components/menu.php';
+                ?>
             </ul>
         </div>
     </nav>

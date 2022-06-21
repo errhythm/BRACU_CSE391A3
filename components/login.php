@@ -1,5 +1,3 @@
-<!-- PHP to create a login form-->
-
 <?php
     if(isset($_POST['login'])){
         $username = $_POST['username'];
