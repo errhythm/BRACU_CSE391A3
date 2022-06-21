@@ -12,6 +12,11 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
+    <!-- connect to dbconnection  -->
+    <?php
+        include 'db/dbConnect.php';
+    ?>
+
     <nav class="wrapper">
         <div class="logo">
             <a href="index.html">

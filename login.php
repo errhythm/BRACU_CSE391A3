@@ -12,6 +12,9 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
+    <?php
+        include 'db/dbConnect.php';
+    ?>
     <nav class="wrapper">
         <div class="logo">
             <a href="index.html">
@@ -26,7 +29,27 @@
             </ul>
         </div>
     </nav>
-        
+    <form action="components/login.php" method="post">
+        <div class="login-form">
+            <div class="login-form-header">
+                <h1>Login</h1>
+            </div>
+            <div class="login-form-body">
+                <div class="login-form-input">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="login-form-input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="login-form-submit">
+                    <input type="submit" name="login" value="Login">
+                </div>
+            </div>
+        </div>
+    </form>
+
     <div class="spacing"></div>
     <script src="script.js"></script> 
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  
