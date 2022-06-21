@@ -12,9 +12,6 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
-    <?php
-        include 'db/dbConnect.php';
-    ?>
     <nav class="wrapper">
         <div class="logo">
             <a href="index.html">
