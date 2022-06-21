@@ -26,6 +26,7 @@
             </ul>
         </div>
     </nav>
+        
     <div class="spacing"></div>
     <script src="script.js"></script> 
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  

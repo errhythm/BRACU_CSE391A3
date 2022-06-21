@@ -91,6 +91,10 @@ nav{
     font-size:1.25rem;
     letter-spacing:.25rem
 }
+.navbar ul li a:hover {
+    color: #95a5a6;
+    text-decoration-line: underline;
+  }
 .logo{
     font-size:1.5rem;
     position:relative;
