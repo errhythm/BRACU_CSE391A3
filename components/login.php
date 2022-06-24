@@ -1,7 +1,7 @@
 <?php
     require_once '../db/dbConnect.php';
     if(isset($_POST['login'])){
-        $username = $_POST['username'];
+        $username = strtolower($_POST['username']);
         $password = $_POST['password'];
         $password = md5($password);
         $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";

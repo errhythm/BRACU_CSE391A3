@@ -1,7 +1,21 @@
 <?php
     require_once '../db/dbConnect.php';
+    // $sql = "CREATE TABLE IF NOT EXISTS users (
+    //     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    //     username VARCHAR(30) NOT NULL,
+    //     password VARCHAR(255) NOT NULL,
+    //     email VARCHAR(50),
+    //     role int(1) NOT NULL DEFAULT '0',
+    //     reg_date TIMESTAMP
+    // )";
+    // if ($conn->query($sql) === TRUE) {
+    //     echo "Table users created successfully";
+    // } else {
+    //     echo "Error creating table: " . $conn->error;
+    // }
     if(isset($_POST['signup'])){
-        $username = $_POST['username'];
+        // convert username to lowercase
+        $username = strtolower($_POST['username']);
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm-password'];
         $email = $_POST['email'];
@@ -21,7 +35,7 @@
             else{
                 if($password == $confirm_password){
                     $password = md5($password);
-                    $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+                    $query = "INSERT INTO users (username, password, email, role) VALUES ('$username', '$password', '$email', '0')";
                     $result = mysqli_query($conn, $query);
                     if($result){
                         echo '<script>alert("Signup successful")</script>';
