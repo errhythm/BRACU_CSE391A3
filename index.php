@@ -31,6 +31,9 @@
         </div>
     </nav>
     <div class="spacing"></div>
+    <div id="mechanic-title">
+        <h1>Hire a Mechanic for your car!</h1>
+    </div>
     
     <script src="script.js"></script> 
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  
