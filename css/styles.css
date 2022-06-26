@@ -69,15 +69,14 @@ input{
     width:90%;
     margin:0 auto
 }
-#mechanic-title h1{
-    font-size:5.5rem;
+.mechanic-title h1{
+    font-size:4.5rem;
     letter-spacing:.75rem;
     font-weight:900;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     color:#0d1b2a;
     text-align: center;
-    opacity:.15
 }
 nav{
     display:flex;
