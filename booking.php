@@ -12,7 +12,6 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
-    <!-- connect to dbconnection  -->
     <?php
         include 'db/dbConnect.php';
     ?>
@@ -22,12 +21,27 @@
     <div class="mechanic-title">
         <h1>Book a Mechanic Now!</h1>
     </div>
-    <div class="section_container">
-        <!-- Create a form to create appointment with the mechanics with the cars from database. A mechanic can not take more than 4 appointments a day. --> 
-        <div class="form-container">
-            <form action="booking.php" method="POST">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+    <div class="text-banner" id="add-appointment">
+                <?php
+                    if(isset($_SESSION['appointmentadd'])){
+                        echo '<h3>Appointment added successfully!</h3>';
+                        unset($_SESSION['appointmentadd']);
+                    }
+                    if(isset($_SESSION['appointmentaddfailed'])){
+                        echo '<h3>"Something went wrong!</h3>';
+                        unset($_SESSION['appointmentaddfailed']);
+                    }
+                    if(isset($_SESSION['appointmentfailed'])){
+                        echo '<h3>The mechanic you selected is not available. Please select another day.</h3>';
+                        unset($_SESSION['appointmentfailed']);
+                    }
+                ?>
+    </div>
+    <div class="section_container">       
+        <div class="appointment-form-container">
+            <form action="components/add-appointment.php" method="POST">
+                <div class="appointment-row">
+                    <div class="appointment-form-group">
                         <label for="mechanic">Mechanic</label>
                         <select id="mechanic" name="mechanic" class="form-control">
                             <?php
@@ -39,13 +53,13 @@
                             ?>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="appointment-form-group">
                         <label for="car">Car</label>
                         <select id="car" name="car" class="form-control">
                             <?php
                                 session_start();
                                 $id = $_SESSION['id'];
-                                $query = "SELECT * FROM cars WHERE id = $id";
+                                $query = "SELECT * FROM cars WHERE user_id = $id";
                                 $result = mysqli_query($conn, $query);
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo '<option value="'.$row['id'].'">'.$row['car_license'].'</option>';
@@ -56,18 +70,16 @@
                             ?>
                         </select>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
+                    <div class="appointment-form-group">
                         <label for="date">Date</label>
-                        <input type="date" class="form-control" id="date" name="date">
+                        <input type="date" id="date" name="date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                     </div>
-                    <div class="form-group">
+                    <div class="appointment-form-group">
                         <label for="time">Time</label>
                         <input type="time" class="form-control" id="time" name="time">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

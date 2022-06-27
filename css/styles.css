@@ -150,6 +150,16 @@ nav{
     text-align: center;
     padding: 10px;
 }
+.text-banner h3{
+    font-size:1.5rem;
+    letter-spacing:.25rem;
+    font-weight:900;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color:#0d1b2a;
+    text-align: center;
+    padding: 10px;
+}
 .section_container{
     display:block;
     clear:both;
@@ -310,4 +320,49 @@ nav{
 }
 .mechanics-table tr:nth-child(odd) {
     background-color: #f2f2f2;
+}
+.appointment-form-container{
+    display:block;
+    clear:both;
+    background-color:#aebab1;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 25px;
+}
+.appointment-form-container h2{
+    font-size:2.5rem;
+    letter-spacing:.75rem;
+    font-weight:900;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color:#0d1b2a;
+    text-align: center;
+    padding: 10px;
+}
+.appointment-form-group{
+    margin-bottom: 1%;
+}
+.appointment-form-group label{
+    margin-right: 1%;
+    font-size:1rem;
+    font-weight:600;
+    font-family: 'Montserrat', sans-serif;
+    text-align:left;
+    margin-bottom:0;
+    cursor:default;
+    padding-bottom:3rem;
+}
+/* form select */
+
+.appointment-form-group select{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    margin-bottom:0;
+    cursor:default;
 }
