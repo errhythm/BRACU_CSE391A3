@@ -47,6 +47,14 @@ session_start();
                         echo '<h2>"Something went wrong!</h2>';
                         unset($_SESSION['appointmentdeletefailed']);
                     }
+                    if(isset($_SESSION['appointmentupdate'])){
+                        echo '<h2>Successfully Updated!</h2>';
+                        unset($_SESSION['appointmentupdate']);
+                    }
+                    if(isset($_SESSION['appointmentupdatefailed'])){
+                        echo '<h2>"Something went wrong!</h2>';
+                        unset($_SESSION['appointmentupdatefailed']);
+                    }
                 ?>
             </div>
             <h1>Appointments List</h1>
@@ -63,25 +71,27 @@ session_start();
                 <?php
                     $query = "SELECT * FROM appointments";
                     $result = mysqli_query($conn, $query);
-                    // iterate all values of result
                     while($appointment = mysqli_fetch_assoc($result)){
-                        $query = "SELECT * FROM mechanics WHERE id = ".$appointment['mechanic_id'];
+                        $query = "SELECT * FROM mechanics WHERE mechanic_id = ".$appointment['mechanic_id'];
                         $result2 = mysqli_query($conn, $query);
                         $mechanic = mysqli_fetch_assoc($result2);
-                        $query = "SELECT * FROM users WHERE id = ".$appointment['customer_id'];
-                        $result2 = mysqli_query($conn, $query);
-                        $customer = mysqli_fetch_assoc($result2);
                         $query = "SELECT * FROM cars WHERE id = ".$appointment['car_id'];
                         $result2 = mysqli_query($conn, $query);
                         $car = mysqli_fetch_assoc($result2);
+                        // // console.log $car['user_id']
+                        // echo '<script>console.log('.$car['user_id'].')</script>';
+
+                        $query = "SELECT * FROM users WHERE id = ".$car['user_id'];
+                        $result2 = mysqli_query($conn, $query);
+                        $customer = mysqli_fetch_assoc($result2);
                         echo '<tr>
                                 <td>'.$appointment['date'].'</td>
                                 <td>'.$appointment['time'].'</td>
                                 <td>'.$mechanic['mechanic_name'].'</td>
-                                <td>'.$customer['name'].'</td>
-                                <td>'.$car['model'].'</td>
-                                <td><a href="edit.php?id='.$appointment['id'].'">Edit</a></td>
-                                <td><a href="delete.php?id='.$appointment['id'].'">Delete</a></td>
+                                <td>'.$customer['username'].'</td>
+                                <td>'.$car['car_model'].'</td>
+                                <td><a href="edit-appointments.php?id='.$appointment['id'].'">Edit</a></td>
+                                <td><a href="/components/delete-appointment.php?id='.$appointment['id'].'">Delete</a></td>
                             </tr>';
                     }
                 ?>

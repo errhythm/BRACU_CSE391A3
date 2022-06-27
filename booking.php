@@ -54,23 +54,6 @@
                         </select>
                     </div>
                     <div class="appointment-form-group">
-                        <label for="car">Car</label>
-                        <select id="car" name="car" class="form-control">
-                            <?php
-                                session_start();
-                                $id = $_SESSION['id'];
-                                $query = "SELECT * FROM cars WHERE user_id = $id";
-                                $result = mysqli_query($conn, $query);
-                                while($row = mysqli_fetch_assoc($result)){
-                                    echo '<option value="'.$row['id'].'">'.$row['car_license'].'</option>';
-                                }
-                                if(mysqli_num_rows($result) == 0){
-                                    echo '<option value="">No car added</option>';
-                                }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="appointment-form-group">
                         <label for="date">Date</label>
                         <input type="date" id="date" name="date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                     </div>
@@ -79,7 +62,7 @@
                         <input type="time" class="form-control" id="time" name="time">
                     </div>
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" class="button">Submit</button>
             </form>
         </div>
     </div>

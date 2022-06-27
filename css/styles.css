@@ -366,3 +366,29 @@ nav{
     margin-bottom:0;
     cursor:default;
 }
+
+/* appointments table full width with borders */
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+}
+.appointments-table th, .appointments-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+.appointments-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+.appointments-table tr:hover {
+    background-color: #ddd;
+}
+.appointments-table tr:nth-child(even) {
+    background-color: #d3d3d3;
+}
+.appointments-table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
