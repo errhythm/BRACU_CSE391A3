@@ -10,13 +10,11 @@ CREATE TABLE IF NOT EXISTS users (
                                     phone VARCHAR(20),
                                     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
-CREATE TABLE IF NOT EXISTS mechanic (
-                                    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-                                    username VARCHAR(30) NOT NULL,
-                                    password VARCHAR(255) NOT NULL,
-                                    email VARCHAR(50),
-                                    role int(1) NOT NULL DEFAULT '0',
-                                    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS mechanics (
+                                    mechanic_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                                    mechanic_name VARCHAR(255) NOT NULL,
+                                    mechanic_age INT(3) NOT NULL,
+                                    mechanic_phone INT(10) NOT NULL);
 
 -- Now appointment of users with mechanic
 

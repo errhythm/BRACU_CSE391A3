@@ -12,29 +12,64 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
+    <!-- connect to dbconnection  -->
     <?php
         include 'db/dbConnect.php';
     ?>
-<nav class="wrapper">
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/logo.png" alt="logo">
-            </a>
-        </div>
-        <div class="navbar">
-            <ul>  
-                <?php
-                    include 'components/menu.php';
-                ?>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        include 'components/menu.php';
+    ?>
     <div class="mechanic-title">
         <h1>Book a Mechanic Now!</h1>
     </div>
     <div class="section_container">
-        
-
+        <!-- Create a form to create appointment with the mechanics with the cars from database. A mechanic can not take more than 4 appointments a day. --> 
+        <div class="form-container">
+            <form action="booking.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="mechanic">Mechanic</label>
+                        <select id="mechanic" name="mechanic" class="form-control">
+                            <?php
+                                $query = "SELECT * FROM mechanics";
+                                $result = mysqli_query($conn, $query);
+                                while($row = mysqli_fetch_assoc($result)){
+                                    echo '<option value="'.$row['mechanic_id'].'">'.$row['mechanic_name'].'</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="car">Car</label>
+                        <select id="car" name="car" class="form-control">
+                            <?php
+                                session_start();
+                                $id = $_SESSION['id'];
+                                $query = "SELECT * FROM cars WHERE id = $id";
+                                $result = mysqli_query($conn, $query);
+                                while($row = mysqli_fetch_assoc($result)){
+                                    echo '<option value="'.$row['id'].'">'.$row['car_license'].'</option>';
+                                }
+                                if(mysqli_num_rows($result) == 0){
+                                    echo '<option value="">No car added</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" class="form-control" id="time" name="time">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
     
 

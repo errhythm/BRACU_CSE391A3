@@ -16,22 +16,11 @@ session_start();
 </head>
 <body>
     <?php
-        include 'db/dbConnect.php';
+        include '../db/dbConnect.php';
     ?>
-    <nav class="wrapper">
-        <div class="logo">
-            <a href="index.html">
-                <img src="../img/logo.png" alt="logo">
-            </a>
-        </div>
-        <div class="navbar">
-            <ul>
-                <?php
-                    include '../components/menu.php';
-                ?>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        include '../components/menu.php';
+    ?>
     <!-- update profile info -->
     <!-- get user info from database -->
 
@@ -51,9 +40,8 @@ session_start();
                     }
                 ?>
             </div>
-
             <h1>Update Profile</h1>
-            <form action="components/user_update.php" method="post">
+            <form action="../components/user_update.php" method="post">
                 <div class="update-profile-info">
                     <label for="name">Username</label>
                     <input type="text" name="username" value="<?php echo $user['username'] ?>" readonly>
@@ -69,15 +57,47 @@ session_start();
                 </div>
             </form>
         </div>
+        <div class="change-password">
+            <div class="text-banner" id="change-password">
+                <?php
+                    if(isset($_SESSION['passwordupdate'])){
+                        echo '<h2>Successfully Updated!</h2>';
+                        unset($_SESSION['passwordupdate']);
+                    }
+                    if(isset($_SESSION['passwordupdateerror'])){
+                        echo '<h2>Password not updated!</h2>';
+                        unset($_SESSION['passwordupdateerror']);
+                    }
+                    if(isset($_SESSION['passwordunmatched'])){
+                        echo '<h2>New password and confirm password do not match!</h2>';
+                        unset($_SESSION['passwordunmatched']);
+                    }
+                    if(isset($_SESSION['wrongpassword'])){
+                        echo '<h2>Old password is incorrect!</h2>';
+                        unset($_SESSION['wrongpassword']);
+                    }
+                ?>
+            </div>
+            <h1>Change Password</h1>
+            <form action="../components/change_password.php" method="post">
+                <div class="change-password-info">
+                    <label for="old-password">Old Password</label>
+                    <input type="password" name="old-password" id="old-password">
+                    <label for="new-password">New Password</label>
+                    <input type="password" name="new-password" id="new-password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" name="confirm-password" id="confirm-password">
+                </div>
+                <div class="change-password-submit">
+                    <input type="submit" value="Update" name="change-password" class="button">
+                </div>
+            </form>
+        </div>
     </div>
     <?php
         include '../components/footer.php';
     ?>
-
-
-
     <div class="spacing"></div>
-    <script src="script.js"></script> 
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  
     </body>
 </html>

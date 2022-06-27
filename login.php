@@ -12,23 +12,21 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
+    <!-- connect to dbconnection  -->
     <?php
         include 'db/dbConnect.php';
     ?>
-    <nav class="wrapper">
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/logo.png" alt="logo">
-            </a>
-        </div>
-        <div class="navbar">
-            <ul>
+    <?php
+        include 'components/menu.php';
+    ?>
+    <div class="text-banner" id="update-profile">
                 <?php
-                    include 'components/menu.php';
+                    if(isset($_SESSION['incorrectpassword'])){
+                        echo '<h2>Incorrect Password!</h2>';
+                        unset($_SESSION['incorrectpassword']);
+                    }
                 ?>
-            </ul>
-        </div>
-    </nav>
+            </div>
     <form action="components/login.php" method="post">
         <div class="login-form">
             <div class="login-form-header">

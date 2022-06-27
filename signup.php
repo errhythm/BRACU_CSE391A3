@@ -12,23 +12,13 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
+    <!-- connect to dbconnection  -->
     <?php
         include 'db/dbConnect.php';
     ?>
-    <nav class="wrapper">
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/logo.png" alt="logo">
-            </a>
-        </div>
-        <div class="navbar">
-            <ul>  
-                <?php
-                    include 'components/menu.php';
-                ?>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        include 'components/menu.php';
+    ?>
     <!-- create sign up form -->
     
     <form action="components/signup.php" method="post">

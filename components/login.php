@@ -15,7 +15,9 @@
             $_SESSION['id'] = $id;
             header('location: ../index.php');
         }else{
-            echo $password;
+            session_start();
+            $_SESSION['incorrectpassword']="1";
+            header('location: ../login.php');
         }
     }
 ?>

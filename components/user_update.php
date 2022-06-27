@@ -12,7 +12,7 @@
         if($result){
             session_start();
             $_SESSION['profileupdate']="1";
-            header("Location: ../user_update.php");         
+            header("Location: ../user/user_update.php");         
         }else{
             echo '<script>alert("Profile not updated!");</script>';
         }

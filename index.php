@@ -16,20 +16,9 @@
     <?php
         include 'db/dbConnect.php';
     ?>
-    <nav class="wrapper">
-        <div class="logo">
-            <a href="index.php">
-                <img src="img/logo.png" alt="logo">
-            </a>
-        </div>
-        <div class="navbar">
-            <ul>
-                <?php
-                    include 'components/menu.php';
-                ?>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        include 'components/menu.php';
+    ?>
     <div class="spacing"></div>
     <div class="mechanic-title">
         <h1>Hire a Mechanic for your car!</h1>
