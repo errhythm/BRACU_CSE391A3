@@ -12,14 +12,12 @@
     <title>CSE391 Assignment 2</title>
 </head>
 <body>
-    <!-- connect to dbconnection  -->
     <?php
         include 'db/dbConnect.php';
     ?>
     <?php
         include 'components/menu.php';
     ?>
-    <!-- create sign up form -->
     <form action="components/signup.php" method="post">
         <div class="form-group">
             <label for="username">Username</label>
