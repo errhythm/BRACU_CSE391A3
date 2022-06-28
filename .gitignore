@@ -1,2 +1,1 @@
-# ignore db/dbConnect.php
-/db/dbConnect.php
+db/dbConnect.php
