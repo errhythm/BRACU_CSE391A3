@@ -41,8 +41,6 @@
             <input type="submit" name="signup" value="Signup">
         </div>
     </form>
-    
-
     <div class="spacing"></div>
     <script src="script.js"></script> 
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  
