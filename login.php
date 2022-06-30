@@ -25,6 +25,14 @@
                         echo '<h2>Incorrect Password!</h2>';
                         unset($_SESSION['incorrectpassword']);
                     }
+                    if(isset($_SESSION['notadmin'])){
+                        echo '<h2>You don\'t have sufficient permissions to visit this page!</h2>';
+                        unset($_SESSION['notadmin']);
+                    }
+                    if(isset($_SESSION['notloggedin'])){
+                        echo '<h2>Please log in to continue!</h2>';
+                        unset($_SESSION['notloggedin']);
+                    }
                 ?>
             </div>
     <form action="components/login.php" method="post">

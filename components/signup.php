@@ -1,18 +1,5 @@
 <?php
     require_once '../db/dbConnect.php';
-    // $sql = "CREATE TABLE IF NOT EXISTS users (
-    //     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    //     username VARCHAR(30) NOT NULL,
-    //     password VARCHAR(255) NOT NULL,
-    //     email VARCHAR(50),
-    //     role int(1) NOT NULL DEFAULT '0',
-    //     reg_date TIMESTAMP
-    // )";
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "Table users created successfully";
-    // } else {
-    //     echo "Error creating table: " . $conn->error;
-    // }
     if(isset($_POST['signup'])){
         // convert username to lowercase
         $username = strtolower($_POST['username']);
