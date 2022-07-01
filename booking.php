@@ -54,6 +54,25 @@
                         </select>
                     </div>
                     <div class="appointment-form-group">
+                        <label for="car">Car</label>
+                        <select id="car" name="car" class="form-control">
+                            <?php
+                                session_start();
+                                $query = "SELECT * FROM cars WHERE user_id = ".$_SESSION['id'];
+                                $result = mysqli_query($conn, $query);
+                                // show options if its 0, then show add a car 
+                                if(mysqli_num_rows($result) == 0){
+                                    echo '<option value="0">You haven\'t added a car yet. </option>';
+                                }
+                                else{
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo '<option value="'.$row['id'].'">'.$row['car_model'].'</option>';
+                                    }
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="appointment-form-group">
                         <label for="date">Date</label>
                         <input type="date" id="date" name="date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                     </div>
@@ -69,7 +88,6 @@
     
 
     <div class="spacing"></div>
-    <script src="script.js"></script> 
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  
     </body>
 </html>

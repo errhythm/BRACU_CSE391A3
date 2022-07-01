@@ -23,7 +23,7 @@
                 <a href="#" class="dropdown-toggle" id="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$_SESSION['username'].'<span class="caret"></span></a>
                 <ul class="dropdown-menu">';
                 if($row['role'] == 1){
-                    echo '<li><a href="/admin.php">Admin</a></li>';
+                    echo '<li><a href="/admin">Admin</a></li>';
                 }
                 echo '<li><a href="/user/cars.php">Cars List</a></li>
                     <li><a href="/user/user_update.php">Update Profile</a></li>

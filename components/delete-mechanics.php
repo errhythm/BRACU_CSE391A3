@@ -14,3 +14,5 @@ require_once '../db/dbConnect.php';
             header('Location: ../admin/mechanics.php');
         }
     }
+?>
+

@@ -78,9 +78,6 @@ session_start();
                         $query = "SELECT * FROM cars WHERE id = ".$appointment['car_id'];
                         $result2 = mysqli_query($conn, $query);
                         $car = mysqli_fetch_assoc($result2);
-                        // // console.log $car['user_id']
-                        // echo '<script>console.log('.$car['user_id'].')</script>';
-
                         $query = "SELECT * FROM users WHERE id = ".$car['user_id'];
                         $result2 = mysqli_query($conn, $query);
                         $customer = mysqli_fetch_assoc($result2);

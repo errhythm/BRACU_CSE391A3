@@ -2,6 +2,7 @@
     require_once '../db/dbConnect.php';
     if(isset($_POST['submit'])){
         session_start();
+        $user_id = $_SESSION['id'];
         $mechanic_id = $_POST['mechanic'];
         $car_id = $_POST['car'];
         $date = $_POST['date'];
@@ -14,7 +15,7 @@
             header('Location: ../booking.php');
         }
         else{
-            $query = "INSERT INTO appointments (mechanic_id, car_id, date, time) VALUES ($mechanic_id, $car_id, '$date', '$time')";
+            $query = "INSERT INTO appointments (mechanic_id, car_id, user_id, date, time) VALUES ($mechanic_id, $car_id, $user_id, '$date', '$time')";
             $result = mysqli_query($conn, $query);
             if($result){
                 $_SESSION['appointmentadd'] = '1';
