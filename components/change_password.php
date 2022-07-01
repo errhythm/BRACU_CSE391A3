@@ -19,20 +19,20 @@
                 if($result){
                     session_start();
                     $_SESSION['passwordupdate']="1";
-                    header("Location: ../user_update.php");
+                    header("Location: ../user/user_update.php");      
                 }else{
                     session_start();
                     $_SESSION['passwordupdateerror']="1";
-                    header("Location: ../user_update.php");
+                    header("Location: ../user/user_update.php");      
                 }
             }else{
                 session_start();
                 $_SESSION['passwordunmatched']="1";
-                header("Location: ../user_update.php");
+                header("Location: ../user/user_update.php");      
             }
         }else{
             session_start();
             $_SESSION['wrongpassword']="1";
-            header("Location: ../user_update.php");
+            header("Location: ../user/user_update.php");      
         }
 }

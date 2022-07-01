@@ -34,27 +34,29 @@
                         unset($_SESSION['notloggedin']);
                     }
                 ?>
-            </div>
-    <form action="components/login.php" method="post">
-        <div class="login-form">
-            <div class="login-form-header">
-                <h1>Login</h1>
-            </div>
-            <div class="login-form-body">
-                <div class="login-form-input">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username">
+    </div>
+    <div class="login-form-container">
+        <form action="components/login.php" method="post">
+            <div class="login-form">
+                <div class="login-form-header">
+                    <h1>Login</h1>
                 </div>
-                <div class="login-form-input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
-                </div>
-                <div class="login-form-submit">
-                    <input type="submit" name="login" value="Login">
+                <div class="login-form-body">
+                    <div class="login-form-input">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+                    <div class="login-form-input">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div class="login-form-submit">
+                        <input type="submit" name="login" value="Login">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 
     <div class="spacing"></div>
     <script src="script.js"></script> 

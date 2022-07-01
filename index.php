@@ -23,7 +23,37 @@
     <div class="mechanic-title">
         <h1>Hire a Mechanic for your car!</h1>
     </div>
-    
+    <div class="admin-functions">
+        <div class="admin1"> 
+                <div class="card 1" style="width: 500px;height: 350px;">
+                    <div class="card_image"> 
+                        <img src="img/svg/signin.svg" alt="">
+                    </div>
+                    <div class="card_title">
+                        <p>Create an account</p>
+                    </div>
+                </div>
+        </div>
+        <div class="admin2">
+                <div class="card 2" style="width: 500px;height: 350px;">
+                    <div class="card_image"> 
+                        <img src="img/svg/booking.svg" alt="">
+                    </div>
+                    <div class="card_title">
+                        <p>Book an appointment</p>
+                    </div>
+                </div>
+        </div>
+        <div class="admin3">
+                <div class="card 3" style="width: 500px;height: 350px;">
+                    <div class="card_image"> 
+                        <img src="img/svg/car.svg" alt="">
+                    </div>
+                    <div class="card_title">
+                        <p>Go to mechanic</p>
+                    </div>
+                </div>
+    </div>
     <script src="script.js"></script> 
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  
     </body>

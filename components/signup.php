@@ -8,30 +8,42 @@
         $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows($result) > 0){
-            echo '<script>alert("Username already taken")</script>';
+            session_start();
+            $_SESSION['usernametaken']="1";
+            header('location: ../signup.php');
         }
         else{
             $sql = "SELECT * FROM users WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0){
-                echo '<script>alert("Email already taken")</script>';
+                session_start();
+                $_SESSION['emailtaken']="1";
+                header('location: ../signup.php');
             }
             else{
-                if($password == $confirm_password){
-                    $password = md5($password);
-                    $sql = "INSERT INTO users (username, password, email, role) VALUES ('$username', '$password', '$email', '0')";
-                    $result = mysqli_query($conn, $sql);
-                    if($result){
-                        echo '<script>alert("Signup successful")</script>';
-                    }else{
-                        echo '<script>alert("Signup failed1")</script>';
+                    if($password == $confirm_password){
+                        $password = md5($password);
+                        $sql = "INSERT INTO users (username, password, email, role) VALUES ('$username', '$password', '$email', '0')";
+                        $result = mysqli_query($conn, $sql);
+                        if($result){
+                            header('location: ../index.php');
+                        }else{
+                            session_start();
+                            $_SESSION['signupfailed']="1";
+                            header('location: ../signup.php');
+                        }
                     }
-                }else{
-                    echo '<script>alert("Password does not match")</script>';
-                }              
-        }
-    }}
+                    else{
+                        session_start();
+                        $_SESSION['passwordunmatched']="1";
+                        header('location: ../signup.php');
+                    }              
+                }
+            }
+    }
     else{
-        echo '<script>alert("Signup failed2")</script>';
+        session_start();
+        $_SESSION['signupfailed']="1";
+        header('location: ../signup.php');
     }
 ?>

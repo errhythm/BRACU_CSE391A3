@@ -59,7 +59,6 @@
                         </div>
                 </div>
             </a>
-            
     </div>
     <div class="spacing"></div>
     <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script>  
