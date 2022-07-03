@@ -55,7 +55,7 @@ session_start();
                     <label for="car_license">Car License Number</label>
                     <input type="text" name="car_license" value="">
                     <label for="car_registration">Car Registration Number</label>
-                    <input type="text" name="car_registration" value="">
+                    <input type="number" name="car_registration" value="">
                     <label for="car_model">Car Model</label>
                     <input type="text" name="car_model" value="">
                 </div>

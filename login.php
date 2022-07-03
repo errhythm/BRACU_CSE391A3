@@ -57,6 +57,11 @@
             </div>
         </form>
     </div>
+    <div class="spacing"></div>
+    <div class="login-form-container" style="text-align: center">
+        <button onclick="loginasadmin()">Login as admin</button>
+        <button onclick="loginasuser()">Login as user</button>
+    </div>
 
     <div class="spacing"></div>
     <script src="script.js"></script> 
