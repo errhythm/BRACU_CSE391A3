@@ -508,4 +508,38 @@ nav{
     .signup-form-submit{
         margin: auto;
     }
+    .form-group{
+        margin-bottom: 1%;
+    }
+    .form-group label{
+        margin-right: 1%;
+        font-size:1rem;
+        font-weight:600;
+        font-family: 'Montserrat', sans-serif;
+        text-align:left;
+        margin-bottom:0;
+        cursor:default;
+        padding-bottom:3rem;
+    }
+    .form-group input{
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        background-color: #f1f1f1;
+        font-family: 'Montserrat', sans-serif;
+        text-align: left;
+        margin-bottom:0;
+        cursor:default;
+    }
+    .form-group select{
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        background-color: #f1f1f1;
+        font-family: 'Montserrat', sans-serif;
+        text-align: left;
+        margin-bottom:0;
+        cursor:default;
+        font-size: 1rem;
+    }
 
