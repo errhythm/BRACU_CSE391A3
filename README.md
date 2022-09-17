@@ -24,3 +24,5 @@
 | Project | [Click Here](https://github.com/errhythm/FacultyPedia) | [Click Here](https://faculty.rhyst.art) | N/A |
 
 
+
+For CSE391 Lecutres, [Click Here](https://github.com/iamraufu/BRACUCSE391/tree/main/Lecture)
