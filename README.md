@@ -18,9 +18,9 @@
 
 | **Submission No.** | Github Link | Site Link | Question |
 | ----------- | ----------- | ----------- | ----------- |
-| Assignment 1 | [Click Here](https://github.com/errhythm/CSE391A1) | [Click Here](https://errhythm.github.io/CSE391A1) | [Click Here](https://github.com/errhythm/CSE391A1/blob/master/Assignment%201.pdf) |
-| Assignment 2 | [Click Here](https://github.com/errhythm/CSE391A2) | [Click Here](https://errhythm.github.io/CSE391A2) | [Click Here](https://github.com/errhythm/CSE391A2/blob/main/Assignment%202.pdf) |
-| Assignment 3 | [Click Here](https://github.com/errhythm/CSE391A3) | [Click Here](https://cse391.rhyst.art) | [Click Here](https://github.com/errhythm/CSE391A3/blob/main/Question.pdf) |
+| Assignment 1 | [Click Here](https://github.com/errhythm/BRACU_CSE391A1) | [Click Here](https://errhythm.github.io/BRACU_CSE391A1) | [Click Here](https://github.com/errhythm/BRACU_CSE391A1/blob/master/Assignment%201.pdf) |
+| Assignment 2 | [Click Here](https://github.com/errhythm/BRACU_CSE391A2) | [Click Here](https://errhythm.github.io/BRACU_CSE391A2) | [Click Here](https://github.com/errhythm/BRACU_CSE391A2/blob/main/Assignment%202.pdf) |
+| Assignment 3 | [Click Here](https://github.com/errhythm/BRACU_CSE391A3) | [Click Here](https://cse391.rhyst.art) | [Click Here](https://github.com/errhythm/BRACU_CSE391A3/blob/main/Question.pdf) |
 | Project | [Click Here](https://github.com/errhythm/FacultyPedia) | [Click Here](https://faculty.rhyst.art) | N/A |
 
 
